@@ -1,0 +1,12 @@
+version: '3'
+services:
+  clustering:
+    build: .
+    command: jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    container_name: 'clustering'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./src:/root/src
+    ports:
+      - "8888:8888"
